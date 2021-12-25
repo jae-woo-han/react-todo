@@ -10,9 +10,11 @@ function App() {
       return;
     }
     setToDo("");
+    setToDos(currentArr=>[toDo, ...currentArr]);
   };
   return (
     <div>
+      <h1>My To Dos ({toDos.length})</h1>
       <form onSubmit={onSubmit}>
         <input
           onChange={onChage}
@@ -22,6 +24,9 @@ function App() {
         />
         <button>Add To Do</button>
       </form>
+      <div>
+        {toDos}
+      </div>
     </div>
   );
 }
