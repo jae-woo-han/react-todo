@@ -25,7 +25,7 @@ function App() {
         <button>Add To Do</button>
       </form>
       <div>
-        {toDos}
+        {toDos.map(item=><div>{item}</div>)}
       </div>
     </div>
   );
