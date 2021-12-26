@@ -10,7 +10,7 @@ function App() {
       return;
     }
     setToDo("");
-    setToDos(currentArr=>[toDo, ...currentArr]);
+    setToDos((currentArr) => [toDo, ...currentArr]);
   };
   return (
     <div>
@@ -24,9 +24,11 @@ function App() {
         />
         <button>Add To Do</button>
       </form>
-      <hr/>
+      <hr />
       <ul>
-        {toDos.map((item,index)=><li key={index}>{item}</li>)}
+        {toDos.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
       </ul>
     </div>
   );
