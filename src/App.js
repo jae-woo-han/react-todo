@@ -17,7 +17,28 @@ function App() {
   }, []);
   //console이 두번 찍히는 건 setMovies하고 setLoading을 하기 때문
   console.log(movies);
-  return <div>{loading ? <h1>Loading...</h1> : null}</div>;
+  return (
+    <div>
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div>
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <img src={movie.medium_cover_image} alt="sorry, not loading"/>
+              <h2>{movie.title}</h2>
+              <p>{movie.summary}</p>
+              <ul>
+                {movie.genres.map((g)=>(
+                  <li key={g}>{g}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;
