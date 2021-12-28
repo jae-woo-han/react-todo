@@ -15,6 +15,7 @@ function App() {
   useEffect(() => {
     getMovies();
   }, []);
+  //console이 두번 찍히는 건 setMovies하고 setLoading을 하기 때문
   console.log(movies);
   return <div>{loading ? <h1>Loading...</h1> : null}</div>;
 }
