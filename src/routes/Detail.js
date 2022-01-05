@@ -5,6 +5,7 @@ import Movie from "../components/Movie";
 function Detail() {
   const { id } = useParams();
 
+  console.log(id);
   const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState([]);
 
